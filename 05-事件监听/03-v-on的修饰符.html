@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div id="app">
+		<div @click="divClick()">
+			aaa
+			<!-- .stop修饰符阻止冒泡 -->
+			<button @click.stop="btnClick()">按钮</button>
+		</div>
+
+		<form action="baidu">
+			<!-- .prevent阻止默认行为 -->
+			<input type="submit" name="" value="提交" @click.prevent="submitClick()">
+		</form>
+
+		<!-- 监听某个键盘按键的点击 -->
+		<input type="text" name="" value="" @keyup.enter="keyupClick()">
+
+		<!-- 监听组件 -->
+		<!-- <cpn @click.native="cpnClick()"></cpn> -->
+
+		<!-- 只触发一次 -->
+		<button @click.once="btn2Click()">按钮2</button>
+	</div>
+
+	<script src="../js/vue.js"></script>
+
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'nihao',
+			},
+			methods:{
+				divClick(){
+					console.log("div");
+					
+				},
+				btnClick(){
+					console.log("btn");
+					
+				},
+				submitClick(){
+					console.log("submit");
+					
+				},
+				keyupClick(){
+					console.log('keyup');
+					
+				},
+				btn2Click(){
+					console.log('+++');
+					
+				}
+			}
+		})
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div id="app">
+		<cpn v-bind:cmovies="movies" :cmessage="message"></cpn>
+	</div>
+
+	<template id="cpn">
+		<div>
+			<p>{{cmovies}}</p>
+			<h2>{{cmessage}}</h2>
+			
+		</div>
+	</template>
+
+	<script src="../js/vue.js"></script>
+
+	<script>
+		//父传子 父组件是vue实例 子组件是自定义组件
+		const cpn = {
+			template: '#cpn',
+			//props:['cmovies','cmessage'],
+			props:{
+				cmovies:Array,
+				//cmessage:String,
+				cmessage:{
+					type:String,
+					default:'aaa'
+				}
+				
+			},
+			data(){
+				return {}
+			},
+			methods:{}
+		}
+
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'nihao',
+				movies:['海王','海贼王','海尔兄弟']
+			},
+			components:{
+				'cpn':cpn
+			}
+		})
+	</script>
+
+</body>
+
+</html>

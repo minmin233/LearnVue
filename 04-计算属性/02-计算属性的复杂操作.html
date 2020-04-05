@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div id="app">
+		<h2>总价格：{{books[0].price+books[1].price}}</h2>
+		<h2>{{totalPrice}}</h2>
+	</div>
+
+	<script src="../js/vue.js"></script>
+
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				books:[
+					{id:110,name:'unix',price:119},
+					{id:111,name:'linux',price:120},
+					{id:112,name:'java',price:160},
+					{id:113,name:'c',price:150}
+				]
+			},
+			computed:{
+				totalPrice:function(){
+					// return this.books.reduce();
+					let result=0;
+					for(let i=0;i<this.books.length;i++){
+						result += this.books[i].price;
+					}
+					return result;
+
+					/* for(let i in this.books){
+
+					}
+					for(let book of this.books){
+
+					} */
+				}
+			}
+		})
+	</script>
+
+</body>
+
+</html>

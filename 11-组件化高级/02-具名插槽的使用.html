@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div id="app">
+		<cpn></cpn>
+		<cpn ><span slot="mid">标题</span></cpn>
+	</div>
+
+	<template id="cpn">
+		<div>
+			<slot name="left"><span>左边</span></slot>
+			<slot name="mid"><span>中间</span></slot>
+			<slot name="right"><span>右边</span></slot>
+		</div>
+	</template>
+
+	<script src="../js/vue.js"></script>
+
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'nihao',
+			},
+			components: {
+				cpn: {
+					template: '#cpn'
+				}
+			}
+		})
+	</script>
+
+</body>
+
+</html>

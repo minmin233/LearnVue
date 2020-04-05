@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div id="app">
+		<!-- 不存在了 只要一次切换时使用 -->
+		<h2 v-if="isShow" id="aaa">{{message}}</h2>
+		<!-- 存在只是不显示 切换频繁时使用 -->
+		<h2 v-show=isShow id="bbb">{{message}}</h2>
+	</div>
+
+	<script src="../js/vue.js"></script>
+
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'nihao',
+				isShow:true
+			}
+		})
+	</script>
+
+</body>
+
+</html>

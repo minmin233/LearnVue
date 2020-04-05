@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8">
+
+	<style>
+	[v-cloak]{
+		display: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="app" v-cloak>
+		{{message}}
+	</div>
+
+	<script src="../js/vue.js"></script>
+
+	<script>
+		/* const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'nihao',
+			}
+		}) */
+		// 在vue解析之前有一个属性v-cloak
+		// 解析之后没有这个属性
+		setTimeout(function(){
+			const app = new Vue({
+				el: '#app',
+				data: {
+					message: 'nihao',
+				}
+			})
+		},1000);
+	</script>
+
+</body>
+
+</html>

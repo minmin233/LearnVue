@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div id="app">
+		{{message}}hhhhh
+		<!-- 把后面的hhhh覆盖了 -->
+		<h2 v-text="message">hhhh</h2>
+	</div>
+
+	<script src="../js/vue.js"></script>
+
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'nihao',
+			}
+		})
+	</script>
+
+</body>
+
+</html>

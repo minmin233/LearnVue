@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Title</title>
+		<meta charset="UTF-8">
+		
+	</head>
+	<body>
+	<button type="">1</button>
+	<button type="">2</button>
+	<button type="">3</button>
+	<button type="">4</button>
+	<button type="">5</button>
+
+	<script>
+		/* {
+			var name='heihei';
+			console.log(name);
+		}
+		console.log(name); */
+
+		/* var func;
+		if(true){
+			var name='minmin';
+			func=function(){
+				console.log(name);
+				
+			}
+		}
+		name='haha';//name的值被修改
+		func(); */
+
+		//没有属于自己的i i最后变成5   
+		// var btns=document.getElementsByTagName('button');
+		/* for(var i=0;i<btns.length;i++){
+			btns[i].addEventListener('click',function(){
+				console.log('第'+i + '个按钮被点击');
+				
+			})
+		} */
+		// 函数有作用域
+		/* for (var i = 0; i < btns.length; i++) {
+			(function(num){
+				btns[i].addEventListener('click', function () {
+					console.log('第' + num + '个按钮被点击');
+				})
+			})(i)
+		} */
+		const btns = document.getElementsByTagName('button');
+		for (let i = 0; i < btns.length; i++) {
+				btns[i].addEventListener('click', function () {
+					console.log('第' + i + '个按钮被点击');
+				})
+		}
+		
+	</script>
+	</body>
+</html>

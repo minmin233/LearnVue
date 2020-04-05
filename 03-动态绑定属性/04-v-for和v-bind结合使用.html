@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8">
+	<style>
+	.active{
+		color: red;
+	}
+	</style>
+</head>
+
+<body>
+	<!-- 默认第一个是红色，之后点击谁，谁是红的 -->
+	<div id="app">
+		<ul>
+			<li v-for='(item,index) in movies'
+			:class={active:currentIndex===index} @click="liClick(index)">
+			{{index}}.{{item}}
+			</li>
+		</ul>
+	</div>
+
+	<script src="../js/vue.js"></script>
+
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				movies: ['海贼王', '东邪西毒', '星际穿越', '大话西游', '盗梦空间'],
+				currentIndex:0,
+			},
+			methods:{
+				liClick(index){
+					this.currentIndex=index;
+				}
+			}
+		})
+	</script>
+</body>
+
+</html>

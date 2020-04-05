@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div id="app">
+
+		<my-cpn2></my-cpn2>
+	</div>
+
+	<script src="../js/vue.js"></script>
+
+	<script>
+		// 子组件
+		const cpnC1 = Vue.extend({
+				template: `
+			<div>
+				<h2>我是标题1</h2>
+				<p>我是内容哈哈哈</p>
+			</div>`
+			})
+			// 父组件
+			const cpnC2 = Vue.extend({
+					template: `
+			<div>
+				<h2>我是标题2</h2>
+				<p>我是内容呵呵呵</p>
+				<my-cpn1></my-cpn1>
+			</div>`,
+			components:{
+				"my-cpn1":cpnC1
+			}
+				})
+
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'nihao',
+			},
+			components: {
+				//'my-cpn1': cpnC1,
+				'my-cpn2': cpnC2,
+			}
+		})
+	</script>
+
+</body>
+
+</html>

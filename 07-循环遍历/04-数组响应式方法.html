@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="item in letters">{{item}}</li>
+		</ul>
+		<button @click="btn1Click">按钮</button>
+	</div>
+
+	<script src="../js/vue.js"></script>
+
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				letters: ['A', 'B', 'C', 'D', 'E'],
+			},
+			methods:{
+				btn1Click(){
+				//this.letters.push('aaa');//最后添加元素
+				// this.letters.push("aaa",'bbb','ccc');
+				// this.letters[0]='bbb';//不响应修改第一个元素
+				// this.letters.pop();//最后删除
+				// this.letters.shift();//开始删除
+				// this.letters.unshift('aaa');//开始添加元素
+				// this.letters.unshift('aaa','bbb','ccc');
+				//可以删除元素，可以插入元素，可以替换元素
+				//splice(start)从start开始删除，插入，替换
+				//splice(start)从start开始删除后面所有元素
+				//删除splice(start,删除几个元素)
+			    //替换splice(start,替换几个元素,替换的元素)
+				//插入splice(start,0,插入的元素)
+				// this.letters.splice()
+				// this.letters.sort();
+				// this.letters.reverse();
+
+				// 通过索引值修改数组中的元素
+				// this.letters[0]='aaa';
+				// this.letters.splice(0,1,'aaa');
+				// set(要修改的对象，索引值,修改后的值)
+				Vue.set(this.letters,0,'aaa');
+				}, 
+				
+				
+			}
+		})
+	</script>
+
+</body>
+
+</html>
